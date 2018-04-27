@@ -1,148 +1,74 @@
 
-// Mes variables 
-
-// MES NUMBRES
 
 
-let num0 = document.createElement("div");
-num0.classList.add('numero0');
-num0.innerHTML = 0;
-document.querySelector('body').appendChild(num0); // je selecionne le body et j'appel la variable number 
-num0.addEventListener('click', function() {  // j'analyse quand je clique  sur le num 
-    let number = this.innerHTML; // je crée une variable qui ajoute e qu'ont à cliquée
-    document.querySelector('#calcul').append(number); // je selection l'ID et j'y ajoute la variable numer 
-});
+//let num0 = document.createElement("div");
+//num0.classList.add('numero0');
+//num0.innerHTML = 0;
+//document.querySelector('body').appendChild(num0); // je selecionne le body et j'appel la variable number 
+//num0.addEventListener('click', function() {  // j'analyse quand je clique  sur le num 
+  //  let number = this.innerHTML; // je crée une variable qui ajoute e qu'ont à cliquée
+    //document.querySelector('#calcul').append(number); // je selection l'ID et j'y ajoute la variable numer 
+//});
 
 
-let num2 = document.createElement("div");
-num2.classList.add('numero2');
-num2.innerHTML = 2;
-document.querySelector('body').appendChild(num2);
-num2.addEventListener('click', function() {
-    let  number = this.innerHTML;
-    document.querySelector('#calcul').append(number);
-});
+//Création de variables 
+let num1 = document.querySelector("#num1");
+let num2 = document.querySelector("#num2");
+let num3 = document.querySelector("#num3");
+let num4 = document.querySelector("#num4");
+let num5 = document.querySelector("#num5");
+let num6 = document.querySelector("#num6");
+let num7 = document.querySelector("#num7");
+let num8 = document.querySelector("#num8");
+let num9 = document.querySelector("#num9");
+let num0 = document.querySelector("#num0");
+let plus = document.querySelector("#plus");
+let moins = document.querySelector("#moins");
+let fois = document.querySelector("#fois");
+let divi = document.querySelector("#divi");
+let egale = document.querySelector("#egale");
+let clear = document.querySelector("#clear");
 
-let num3 = document.createElement("div");
-num3.classList.add('numero3');
-num3.innerHTML = 3;
+//Création d'une variable pour stocker l'opération
+let donneeCalculatrice = "";
 
-document.querySelector('body').appendChild(num3);
-num3.addEventListener('click', function() {
-    let number = this.innerHTML;
-    document.querySelector('#calcul').append(number);
-});
+//Création de addEventListener et dire, quand je clique et j'execute la fonction
+num1.addEventListener("click", donneesCalcul);
+num2.addEventListener("click", donneesCalcul);
+num3.addEventListener("click", donneesCalcul);
+num4.addEventListener("click", donneesCalcul);
+num5.addEventListener("click", donneesCalcul);
+num6.addEventListener("click", donneesCalcul);
+num7.addEventListener("click", donneesCalcul);
+num8.addEventListener("click", donneesCalcul);
+num9.addEventListener("click", donneesCalcul);
+num0.addEventListener("click", donneesCalcul);
+plus.addEventListener("click", donneesCalcul);
+moins.addEventListener("click", donneesCalcul);
+fois.addEventListener("click", donneesCalcul);
+divi.addEventListener("click", donneesCalcul);
 
+//add event listener et execute la fonction 
+egale.addEventListener("click", resultatCalcul);
+clear.addEventListener("click", clearCalcul);
 
-let num4 = document.createElement("div");
-num4.classList.add('numero4');
-num4.innerHTML = 4;
-document.querySelector('body').appendChild(num4);
-num4.addEventListener('click', function() {
-    let number = this.innerHTML;
-    document.querySelector('#calcul').append(number);
-});
+//fonction qui crée le calcul et l'affiche
+function donneesCalcul(){
+  donneeCalculatrice += this.value; // AJouter a la calculatrice le valeur sur lesquelle on à cliquer 
+  // LEs valeur on été défini dans le html
+  document.querySelector("#resultat").innerHTML = donneeCalculatrice; // ajouter au à l'id resultat les donner stocker dans la calculette 
+}
 
+//fonction pour faire le calcul
+function resultatCalcul(){
+  let resultatCalcul = eval(donneeCalculatrice); // varaibale resultat qui transforme les chaines de caractaire en operation et nombre pour en faire un calcule et lui passer 
+  // Lui passer la valeur donneCalculatrice qui à recuperrer les donne de tous click 
+  document.querySelector("#resultat").innerHTML += " = "+resultatCalcul; // ajouter  l'id dans le html le = et la variable resultat qu'ont à calculer
+  donneeCalculatrice = resultat;
+}
 
-let num5 = document.createElement("div"); 
-num5.classList.add('numero5');
-num5.innerHTML = 5
-document.querySelector('body').appendChild(num5);
-num5.addEventListener('click', function() {
-    let number = this.innerHTML;
-    document.querySelector('#calcul').append(number);
-});
-
-
-let num6 = document.createElement("div");
-num6.classList.add('nummero6');
-num6.innerHTML = 6;
-document.querySelector('body').appendChild(num6);
-num6.addEventListener('click', function() {
-    let number = this.innerHTML;
-    document.querySelector('#calcul').append(number);
-});
-
-let num7 = document.createElement("div");
-num7.classList.add('numero7');
-num7.innerHTML = 7;
-document.querySelector('body').appendChild(num7);
-num7.addEventListener('click', function() {
-    let number = this.innerHTML;
-    document.querySelector('#calcul').append(number);
-});
-
-let num8 = document.createElement("div");
-num8.classList.add('numero8');
-num8.innerHTML = 8;
-document.querySelector('body').appendChild(num8);
-num8.addEventListener('click', function() {
-    let number = this.innerHTML;
-    document.querySelector('#calcul').append(number);
-})
-
-
-let num9 = document.createElement("div");
-num9.classList.add('numero9');
-num9.innerHTML = 9;
-document.querySelector('body').appendChild(num9);
-num9.addEventListener('click', function() {
-    let number = this.innerHTML;
-    document.querySelector('#calcul').append(number);
-});
-
-
-
-
-// OPERATOR 
-let plus = document.createElement("div"); 
-plus.classList.add('operationPlus');
-plus.innerHTML = '+' ;
-document.querySelector('body').appendChild(plus);
-plus.addEventListener('click', function() {
-    let operator = this.innerHTML;
-    document.querySelector('#calcul').append(operator);
-});
-
-let moins = document.createElement("div");
-moins.classList.add('operationMoins');
-moins.innerHTML = '-';
-document.querySelector('body').appendChild(moins);
-moins.addEventListener('click', function() {
-    let operator = this.innerHTML;
-    document.querySelector('#calcul').append(operator);
-});
-
-
-//
-let ce = document.createElement("div");
-ce.classList.add('delete');
-ce.innerHTML = 'CE'
-document.querySelector('body').appendChild(ce)
-ce.addEventListener('click', function() {
-    document.querySelector('#calcul').innerHTML = "";
-})
-
-
-
-// RESULTAT
-let egale = document.createElement("div");
-egale.classList.add('operationEgale');
-egale.innerHTML = '='; 
-document.querySelector('body').appendChild(egale);
-
-
-
-egale.addEventListener('click', function() {
-    // (\d+)(.)(\d+);
-    //let regex = new RegExp('/(\d+)(.)(\d+)/g');
-    let calcul = document.querySelector('#calcul').innerHTML; // efacer 
-    debugger;
-
-   // document.querySelector('#calcul').appendChild(number);
-    //let total = number + operator + number; 
-    document.querySelector('#result').append(total);   // selctionner l'id et l'afficher dans le html 
-});
-// let clean = remove('#calcul')
-// Au moment ou on clique sur egal, on analyse le calcul, et, selon l'operateur, on fait l'operation correspondante
-
+//fonction pour effacer les données
+function clearCalcul(){
+  donneeCalculatrice = ""; // remise à zero des donner de la calculette pour les future calcule
+  document.querySelector("#resultat").innerHTML = ""; // Afficher " " dans l'id resultat
+}

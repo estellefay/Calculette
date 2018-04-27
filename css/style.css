@@ -1,1 +1,82 @@
-/* ----- MA FEUILLE DE STYLE -----*/ 
+
+/*--------CALCULETE GLOBALE-------------*/
+.calculatrice {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.flex {
+    display: flex;
+    width: 50vw;
+    height: 50px;
+    justify-content: space-around;
+
+}
+
+/* -------STYLE OF MY BUTTONS-------- */
+.button {
+    width: 33%;
+    background-color: #3C989E; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 3px;
+}
+
+.button:hover {
+    background-color:#5DB5A4; 
+    color: white;
+}
+
+.button2 {
+    width: 25%;
+    background-color: #3C989E; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 3px;
+
+}
+
+.button2:hover {
+    background-color: #5DB5A4; 
+    color: white;
+}
+
+
+.button-clean {    
+    width: 33%;
+    background-color: #F57A82; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 3px;
+
+}
+
+.button-clean:hover {
+    background-color: #ED5276; 
+    color: white;
+}
+
+/* -------RESULT-------- */
+.fenetre {
+background-color:#F4CDA5;
+}
+
+#result 
